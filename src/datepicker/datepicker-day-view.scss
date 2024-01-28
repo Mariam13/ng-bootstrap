@@ -1,4 +1,5 @@
 [ngbDatepickerDayView] {
+	position: relative;
 	text-align: center;
 	width: 2rem;
 	height: 2rem;
@@ -14,5 +15,23 @@
 
 	&.outside {
 		opacity: 0.5;
+	}
+
+	.date-with-info {
+		&-dots {
+			display: flex;
+			position: absolute;
+			left: 50%;
+			margin: auto;
+			transform: translate(-50%, -50%);
+
+			div {
+				height: 4px;
+				width: 4px;
+				border-radius: 50%;
+				margin: 0 1px;
+				background-color: black;
+			}
+		}
 	}
 }

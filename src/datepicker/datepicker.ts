@@ -229,6 +229,7 @@ export class NgbDatepickerMonth {
 		>
 			<div
 				ngbDatepickerDayView
+				[dots]="getDotsForDay(date)"
 				[date]="date"
 				[currentMonth]="currentMonth"
 				[selected]="selected"
@@ -415,6 +416,11 @@ export class NgbDatepicker implements AfterViewInit, OnChanges, OnInit, ControlV
 	 * You could use `navigateTo(date)` method as an alternative.
 	 */
 	@Input() startDate = this._config.startDate;
+
+	/**
+	 * Dots to show below every day.
+	 */
+	@Input() dots = this._config.dots;
 
 	/**
 	 * The way weekdays should be displayed.
@@ -674,5 +680,9 @@ export class NgbDatepicker implements AfterViewInit, OnChanges, OnInit, ControlV
 	writeValue(value) {
 		this._controlValue = NgbDate.from(this._ngbDateAdapter.fromModel(value));
 		this._service.select(this._controlValue);
+	}
+
+	getDotsForDay(day: NgbDate) {
+		return this.dots?.[`${day.year}-${day.month}-${day.day}`];
 	}
 }

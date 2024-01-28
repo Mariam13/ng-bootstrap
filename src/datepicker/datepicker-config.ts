@@ -22,6 +22,7 @@ export class NgbDatepickerConfig {
 	navigation: 'select' | 'arrows' | 'none' = 'select';
 	outsideDays: 'visible' | 'collapsed' | 'hidden' = 'visible';
 	showWeekNumbers = false;
+	dots: { [key: string]: string[] };
 	startDate: { year: number; month: number; day?: number };
 	weekdays: TranslationWidth | boolean = TranslationWidth.Short;
 }

@@ -1,6 +1,11 @@
 <p>Simple datepicker</p>
 
-<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next" />
+<ngb-datepicker
+	#dp
+	[(ngModel)]="model"
+	(navigate)="date = $event.next"
+	[dots]="{ '2024-1-28': ['#435', '#6f1'], '2024-1-13': ['#2b4', '#921'] }"
+/>
 
 <hr />
 
